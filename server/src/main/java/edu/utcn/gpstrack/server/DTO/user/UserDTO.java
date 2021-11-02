@@ -25,6 +25,13 @@ public class UserDTO {
         this.positions = positions;
     }
 
+    public UserDTO(Integer id, String username, String password, String role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
+
     public Integer getId() {
         return id;
     }

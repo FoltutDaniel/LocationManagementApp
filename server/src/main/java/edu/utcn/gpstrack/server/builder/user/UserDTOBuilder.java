@@ -14,10 +14,7 @@ public class UserDTOBuilder {
                user.getId(),
                user.getUsername(),
                user.getPassword(),
-               user.getRole(),
-               user.getPositions().stream()
-                       .map(PositionDTOBuilder::generateDTOFromEntity)
-                       .collect(Collectors.toList())
+               user.getRole()
        );
     }
 
