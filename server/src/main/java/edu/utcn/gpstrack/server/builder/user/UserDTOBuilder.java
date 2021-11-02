@@ -1,13 +1,9 @@
 package edu.utcn.gpstrack.server.builder.user;
 
-import edu.utcn.gpstrack.server.DTO.PositionDTO;
-import edu.utcn.gpstrack.server.DTO.UserDTO;
+import edu.utcn.gpstrack.server.DTO.user.UserDTO;
 import edu.utcn.gpstrack.server.builder.position.PositionDTOBuilder;
-import edu.utcn.gpstrack.server.entity.Position;
 import edu.utcn.gpstrack.server.entity.User;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class UserDTOBuilder {

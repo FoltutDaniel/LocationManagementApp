@@ -1,5 +1,7 @@
-package edu.utcn.gpstrack.server.DTO;
+package edu.utcn.gpstrack.server.DTO.user;
 
+
+import edu.utcn.gpstrack.server.DTO.position.PositionDTO;
 
 import java.util.List;
 

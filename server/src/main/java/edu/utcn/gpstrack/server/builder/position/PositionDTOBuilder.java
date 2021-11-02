@@ -1,6 +1,6 @@
 package edu.utcn.gpstrack.server.builder.position;
 
-import edu.utcn.gpstrack.server.DTO.PositionDTO;
+import edu.utcn.gpstrack.server.DTO.position.PositionDTO;
 import edu.utcn.gpstrack.server.entity.Position;
 
 public class PositionDTOBuilder {

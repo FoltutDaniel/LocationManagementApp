@@ -3,6 +3,7 @@ package edu.utcn.gpstrack.server.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -81,5 +82,13 @@ public class User {
 
     public void setPositions(List<Position> positions) {
         this.positions = positions;
+    }
+
+    public void addPosition(Position position){
+        if(positions == null){
+            positions = new ArrayList<>();
+        }
+        positions.add(position);
+        position.setUser(this);
     }
 }

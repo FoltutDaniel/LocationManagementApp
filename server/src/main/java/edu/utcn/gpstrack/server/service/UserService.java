@@ -1,9 +1,9 @@
 package edu.utcn.gpstrack.server.service;
 
-import edu.utcn.gpstrack.server.DTO.UserDTO;
+import edu.utcn.gpstrack.server.DTO.user.UserDTO;
+import edu.utcn.gpstrack.server.DTO.user.UserLoginDTO;
 import edu.utcn.gpstrack.server.builder.user.UserDTOBuilder;
 import edu.utcn.gpstrack.server.entity.User;
-import edu.utcn.gpstrack.server.exception.ResourceNotFoundException;
 import edu.utcn.gpstrack.server.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,14 +27,14 @@ public class UserService {
     }
 
     @Transactional
-    public UserDTO loginUser(String username, String password){
+    public UserDTO loginUser(UserLoginDTO userLoginDTO){
 
-        User currentUser = userRepository.findUserByUsername(username);
+        User currentUser = userRepository.findUserByUsername(userLoginDTO.getUsername());
 
         if(currentUser == null){
             System.out.println("Nu avem user din ala tati");
             return null;
-        }else if(currentUser.getPassword().equals(password)){
+        }else if(currentUser.getPassword().equals(userLoginDTO.getPassword())){
             return UserDTOBuilder.generateDTOFromEntity(currentUser);
         }else{
             System.out.println("Parola greista fra");

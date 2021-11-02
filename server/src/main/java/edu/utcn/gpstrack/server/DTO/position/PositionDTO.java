@@ -1,4 +1,4 @@
-package edu.utcn.gpstrack.server.DTO;
+package edu.utcn.gpstrack.server.DTO.position;
 
 import edu.utcn.gpstrack.server.entity.User;
 
