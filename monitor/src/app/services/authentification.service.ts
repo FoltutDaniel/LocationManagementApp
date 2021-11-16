@@ -6,13 +6,18 @@ import { User } from '../common/user';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class AuthentificationService {
   
-  loginUrl = "http://localhost:8080/user/login";
+  baseUrl = "http://localhost:8080/user";
   constructor(private http: HttpClient) { }
 
   login(loginInfo: LoginInfo): Promise<User>{
     
-    return this.http.post<User>(this.loginUrl, loginInfo).toPromise();
+    return this.http.post<User>(this.baseUrl + "/login", loginInfo).toPromise();
+  }
+
+  register(userInfo: User): Promise<number>{
+
+    return this.http.post<number>(this.baseUrl + "/register", userInfo).toPromise();
   }
 }

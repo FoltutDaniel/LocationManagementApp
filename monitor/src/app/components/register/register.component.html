@@ -1,1 +1,19 @@
-<p>register works!</p>
+<div class="container">
+    <form [formGroup]="registerForm" class="register-form-container" (ngSubmit)="onSubmit()">
+            <h1>Register</h1>
+            <label for="username">Username: </label>
+            <input id="username" type="text" formControlName="username">
+            
+            <label for="password">Password: </label>
+            <input id="password" type="password" formControlName="password">
+
+            <label for="role">Role: </label>
+            <select name="role" id="role"formControlName="role">
+                <option value="" selected disabled hidden>Choose Role</option>
+                <option value="user"> User</option>
+                <option value="admin"> Admin</option>
+            </select>
+
+        <button type="submit" >Register</button>
+    </form>
+</div>

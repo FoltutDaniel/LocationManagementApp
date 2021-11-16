@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginInfo } from 'src/app/common/login-info';
 import { User } from 'src/app/common/user';
-import { LoginService } from 'src/app/services/login.service';
+import { AuthentificationService } from 'src/app/services/authentification.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor(private loginService: LoginService, private _router: Router) { }
+  constructor(private authService: AuthentificationService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.loginInfo.username = this.loginForm.controls['username'].value;
     this.loginInfo.password = this.loginForm.controls['password'].value;
 
-    this.loginService.login(this.loginInfo).then(
+    this.authService.login(this.loginInfo).then(
       data => {
         this.currentUser = data;
         console.log(this.currentUser);

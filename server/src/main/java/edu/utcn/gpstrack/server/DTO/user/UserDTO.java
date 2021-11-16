@@ -17,6 +17,9 @@ public class UserDTO {
 
     private List<PositionDTO> positions;
 
+    public UserDTO() {
+    }
+
     public UserDTO(Integer id, String username, String password, String role, List<PositionDTO> positions) {
         this.id = id;
         this.username = username;
